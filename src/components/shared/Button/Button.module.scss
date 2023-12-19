@@ -1,0 +1,13 @@
+.button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  &.dark {
+    color: white;
+  }
+
+  &.light {
+    color: black;
+  }
+}

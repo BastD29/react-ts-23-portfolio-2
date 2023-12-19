@@ -1,0 +1,49 @@
+$light-theme: (
+  "background-white-1": #ffffff,
+  "background-white-2": #fafafa,
+  "background-grey-1": #f5f5f5,
+  "background-grey-2": #e0e0e0,
+  "text-black-1": #000000,
+  "text-dark-gray-1": #333333,
+  "text-dark-gray-2": #4f4f4f,
+);
+
+$dark-theme: (
+  "background-black-1": #121212,
+  "background-black-2": #181818,
+  "background-grey-1": #1e1e1e,
+  "background-grey-2": #2d2d2d,
+  "text-white-1": #ffffff,
+  "text-white-2": #e0e0e0,
+  "text-white-3": #cccccc,
+);
+
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1280px,
+  xxl: 1440px,
+);
+
+$justify-content-values: (
+  "flex-start",
+  "flex-end",
+  "center",
+  "space-between",
+  "space-around"
+);
+
+$align-items-values: (
+  "stretch",
+  "flex-start",
+  "flex-end",
+  "center",
+  "baseline"
+);
+
+$auth-header-height: 230px;
+$sidebar-width: 200px;
+$header-height: 64px;
+$footer-height: 75px;

@@ -1,0 +1,26 @@
+.search-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  &__input {
+    height: 24px;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    padding: 5px;
+
+    &.light {
+      border: solid 0.1px black;
+    }
+  }
+
+  &__button {
+    height: 24px;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+
+    &.dark {
+      border: solid 0.1px white;
+    }
+  }
+}

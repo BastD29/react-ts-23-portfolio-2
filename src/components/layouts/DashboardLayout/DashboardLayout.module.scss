@@ -1,0 +1,106 @@
+@use "../../../style/abstracts/variables" as variables;
+@use "../../../style/abstracts/mixins" as mixins;
+
+.dashboard-layout {
+  &__header {
+    &.dark {
+      background-color: black;
+    }
+
+    &.light {
+      background-color: white;
+    }
+
+    position: relative;
+  }
+
+  .menu-button {
+    // border: solid 1px red;
+
+    @media (min-width: calc(#{map-get(variables.$breakpoints, md)} - 1px)) {
+      display: none;
+    }
+  }
+
+  .search-button {
+    @media (max-width: calc(#{map-get(variables.$breakpoints, md)} - 1px)) {
+      display: none;
+    }
+  }
+
+  .header-navbar {
+    // background-color: red;
+
+    &.dark {
+      ul {
+        li {
+          a {
+            color: white;
+          }
+        }
+      }
+    }
+
+    &.light {
+      ul {
+        li {
+          a {
+            color: black;
+          }
+        }
+      }
+    }
+
+    @media (max-width: calc(#{map-get(variables.$breakpoints, md)} - 1px)) {
+      display: none;
+    }
+  }
+
+  .mobile-menu {
+    // background-color: red;
+
+    &.dark {
+      ul {
+        li {
+          a {
+            color: black;
+          }
+        }
+      }
+    }
+
+    &.light {
+      ul {
+        li {
+          a {
+            color: white;
+          }
+        }
+      }
+    }
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 24px;
+    width: 70%;
+    height: 100vh;
+    z-index: 1;
+
+    @media (min-width: calc(#{map-get(variables.$breakpoints, md)} - 1px)) {
+      display: none;
+    }
+  }
+
+  &__content {
+    height: 100vh;
+
+    &.dark {
+      background-color: black;
+    }
+
+    &.light {
+      background-color: white;
+    }
+  }
+}

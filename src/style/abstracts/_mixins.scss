@@ -1,0 +1,44 @@
+@use "./variables" as variables;
+
+// RESPONSIVE
+
+// mobile-first
+
+@mixin respond-to($breakpoint) {
+  @if map-has-key(variables.$breakpoints, $breakpoint) {
+    $breakpoint-value: map-get(variables.$breakpoints, $breakpoint);
+
+    @if $breakpoint == xs {
+      @media (min-width: $breakpoint-value) {
+        @content;
+      }
+    } @else {
+      // add 1px to avoid overlap with the upper boundary of the smaller breakpoint
+      @media (min-width: ($breakpoint-value + 1)) {
+        @content;
+      }
+    }
+  } @else {
+    @warn "Invalid breakpoint: #{$breakpoint}.";
+  }
+}
+
+// desktop-first
+
+// @mixin respond-to($breakpoint) {
+//   @if map-has-key(variables.$breakpoints, $breakpoint) {
+//     $breakpoint-value: map-get(variables.$breakpoints, $breakpoint);
+
+//     @if $breakpoint == xxl {
+//       @media (max-width: $breakpoint-value) {
+//         @content;
+//       }
+//     } @else {
+//       @media (max-width: ($breakpoint-value - 1)) {
+//         @content;
+//       }
+//     }
+//   } @else {
+//     @warn "Invalid breakpoint: #{$breakpoint}.";
+//   }
+// }

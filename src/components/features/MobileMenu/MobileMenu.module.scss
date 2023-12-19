@@ -1,0 +1,40 @@
+.mobile-menu {
+  // background-color: gray;
+
+  z-index: 1;
+
+  &.dark {
+    background-color: white;
+  }
+
+  &.light {
+    background-color: black;
+  }
+
+  display: flex;
+  flex-direction: column;
+  grid-gap: 16px;
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__navbar {
+    ul {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+
+      // a {
+      //   color: white;
+      // }
+    }
+  }
+
+  &__btn {
+    // background-color: red;
+  }
+}
