@@ -8,7 +8,9 @@ export default {
   routes: {
     root: "/",
     nav: {
-      home: "/home",
+      // home: "/home",
+      home: "/",
+      projects: "/projects",
       about: "/about",
       contact: "/contact",
     },
@@ -18,6 +20,9 @@ export default {
       register: "/register",
       // reset_password: "/reset-password",
       // change_password: "/change-password"
+    },
+    project: {
+      root: "/projects",
     },
   },
   links: {
@@ -33,5 +38,27 @@ export default {
   },
   footer: {
     message: "© Portfolio {{year}} developed by Bastien Daniel",
+  },
+  dashboard: {
+    project: {
+      projectCard: {
+        detailBtn: "See detail",
+      },
+      projectDetail: {
+        languages: "Languages:",
+        side: "Side:",
+        stack: "Stack:",
+        styles: "Styles:",
+        componentLibraries: "Component libraries:",
+        frameworks: "Framework:",
+        hooks: "Hooks:",
+        functionalities: "Functionalities:",
+        startDate: "Start date:",
+        endDate: "End date:",
+        status: "Status:",
+        website: "Website:",
+        github: "Github:",
+      },
+    },
   },
 };

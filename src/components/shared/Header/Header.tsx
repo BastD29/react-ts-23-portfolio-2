@@ -4,14 +4,13 @@ import { useTheme } from "../../../contexts/ThemeContext";
 
 import { Link } from "react-router-dom";
 
-import styles from "./Header.module.scss";
 import { HOME } from "../../../constants/routes";
+
+import styles from "./Header.module.scss";
 
 type HeaderProps = HTMLAttributes<HTMLElement> & {
   title?: string;
   navbar?: ReactNode;
-  // button1?: ReactNode;
-  // button2?: ReactNode;
   buttons?: ReactNode[];
   className?: string;
   icon?: ReactElement;
@@ -44,7 +43,6 @@ const Header: FC<HeaderProps> = ({
       <div className={styles["header__buttons"]}>
         {mobileMenu}
         {searchBar}
-        {/* {buttons && buttons.map((button) => button)} */}
         {buttons &&
           buttons.map((button, index) => (
             <Fragment key={index}>{button}</Fragment>

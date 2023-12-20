@@ -1,0 +1,26 @@
+.project-detail {
+  &__paragraph {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    grid-gap: 16px;
+  }
+
+  &__image {
+    display: block;
+
+    height: 100px;
+    width: 100%;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: row;
+    // align-items: start;
+    // justify-content: space-around;
+    // justify-content: space-between;
+    grid-gap: 24px;
+
+    padding: 24px;
+  }
+}

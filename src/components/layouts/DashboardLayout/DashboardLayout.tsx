@@ -26,8 +26,12 @@ import { useTheme } from "../../../contexts/ThemeContext";
 import { Outlet } from "react-router-dom";
 
 import styles from "./DashboardLayout.module.scss";
+import { Footer } from "../../shared/Footer/Footer";
+import i18n from "../../../i18n/i18n";
 
 const DashboardLayout = () => {
+  const currentYear = new Date().getFullYear();
+
   const { theme, toggleTheme } = useTheme();
 
   const [showSearchBar, setShowSearchBar] = useState(false);
@@ -98,6 +102,13 @@ const DashboardLayout = () => {
       >
         <Outlet />
       </Content>
+      <Footer
+        className={`${styles["dashboard-layout__footer"]} ${
+          theme === "dark" ? styles["dark"] : styles["light"]
+        }`}
+      >
+        <p>{i18n.t("footer.message", { year: currentYear }) as string}</p>
+      </Footer>
     </BaseLayout>
   );
 };

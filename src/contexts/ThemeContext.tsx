@@ -19,7 +19,7 @@ export const ThemeProvider: FC<ThemeProviderProps> = ({ children }) => {
   const [theme, setTheme] = useState<Theme>("light");
 
   const toggleTheme = () => {
-    console.log("toggleTheme clicked");
+    // console.log("toggleTheme clicked");
 
     setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
   };

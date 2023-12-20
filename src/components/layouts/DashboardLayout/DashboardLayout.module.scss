@@ -2,6 +2,10 @@
 @use "../../../style/abstracts/mixins" as mixins;
 
 .dashboard-layout {
+  // display: flex;
+  // flex-direction: column;
+  // height: 100vh;
+
   &__header {
     &.dark {
       background-color: black;
@@ -93,14 +97,32 @@
   }
 
   &__content {
-    height: 100vh;
-
     &.dark {
       background-color: black;
     }
 
     &.light {
       background-color: white;
+    }
+  }
+
+  &__footer {
+    &.dark {
+      background-color: black;
+      border-top: solid 0.5px white;
+
+      p {
+        color: white;
+      }
+    }
+
+    &.light {
+      background-color: white;
+      border-top: solid 0.5px black;
+
+      p {
+        color: black;
+      }
     }
   }
 }

@@ -1,15 +1,18 @@
 import { FC } from "react";
+
 import { BaseLayout } from "../BaseLayout/BaseLayout";
+
 import { Outlet } from "react-router-dom";
+
+import styles from "./PageLayout.module.scss";
 
 type PageLayoutProps = {
   title?: string;
 };
 
-const PageLayout: FC<PageLayoutProps> = ({ title }) => {
+const PageLayout: FC<PageLayoutProps> = ({}) => {
   return (
-    <BaseLayout>
-      {/* <h1>{title}</h1> */}
+    <BaseLayout className={styles["page-layout"]}>
       <Outlet />
     </BaseLayout>
   );

@@ -1,0 +1,8 @@
+.project-list {
+  display: grid;
+  // align-items: center;
+  // justify-content: center;
+  justify-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  // grid-gap: 24px;
+}

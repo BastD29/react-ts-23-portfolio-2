@@ -4,9 +4,9 @@ const authLinks = [
 ];
 
 const homepageLinks = [
+  { title: "Projects", path: "/projects" },
   { title: "About", path: "/about" },
   { title: "Contact", path: "/contact" },
-  // { title: "Profile", path: "/profile" },
 ];
 
 export { authLinks, homepageLinks };
