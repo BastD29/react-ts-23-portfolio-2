@@ -2,7 +2,7 @@ import { FC } from "react";
 
 import { Project } from "../../../models/Project";
 
-import i18n from "../../../i18n/i18n";
+import { DetailParagraph } from "../DetailParagraph/DetailParagraph";
 
 import styles from "./ProjectTechnology.module.scss";
 
@@ -10,26 +10,30 @@ type ProjectTechnologyProps = {
   project: Project;
 };
 
-const DetailParagraph: FC<{ titleKey: string; content: string | string[] }> = ({
-  titleKey,
-  content,
-}) => (
-  <div className={styles["project-detail__paragraph"]}>
-    <h3>{i18n.t(`dashboard.project.projectDetail.${titleKey}`)}</h3>
-    <p>{content}</p>
-  </div>
-);
-
 const ProjectTechnology: FC<ProjectTechnologyProps> = ({ project }) => {
   const detailSections = [
     { key: "languages", content: project?.languages },
     { key: "side", content: project?.side },
     { key: "stack", content: project?.stack },
+    { key: "styles", content: project?.styles },
+    { key: "componentLibraries", content: project?.componentLibraries },
+    { key: "frameworks", content: project?.frameworks },
+    { key: "hooks", content: project?.hooks },
+    { key: "functionalities", content: project?.functionalities },
+    { key: "startDate", content: project?.startDate },
+    { key: "endDate", content: project?.endDate },
+    { key: "status", content: project?.status },
+    { key: "website", content: project?.website },
+    { key: "github", content: project?.github },
   ];
   return (
     <div className={styles["project-technology"]}>
       {detailSections.map(({ key, content }) =>
-        content ? (
+        (
+          Array.isArray(content)
+            ? content.some((item) => item.trim() !== "")
+            : content
+        ) ? (
           <DetailParagraph key={key} titleKey={key} content={content} />
         ) : null
       )}

@@ -1,8 +1,22 @@
+@use "../../../style/abstracts/variables" as variables;
+@use "../../../style/abstracts/mixins" as mixins;
+
 .project-list {
   display: grid;
-  // align-items: center;
-  // justify-content: center;
-  justify-items: center;
-  grid-template-columns: repeat(3, 1fr);
-  // grid-gap: 24px;
+  grid-gap: 16px;
+
+  // background-color: red;
+
+  @media (min-width: calc(#{map-get(variables.$breakpoints, sm)} - 1px)) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: calc(#{map-get(variables.$breakpoints, md)} - 1px)) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 24px;
+  }
+
+  @media (min-width: calc(#{map-get(variables.$breakpoints, lg)} - 1px)) {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }

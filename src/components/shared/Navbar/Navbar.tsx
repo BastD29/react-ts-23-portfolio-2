@@ -14,9 +14,10 @@ type Link = {
 type NavbarProps = {
   links: Link[];
   className?: string;
+  onLinkClick?: () => void;
 };
 
-const Navbar: FC<NavbarProps> = ({ links, className }) => {
+const Navbar: FC<NavbarProps> = ({ links, className, onLinkClick }) => {
   const { theme } = useTheme();
   // console.log("theme:", theme);
 
@@ -28,6 +29,7 @@ const Navbar: FC<NavbarProps> = ({ links, className }) => {
             <NavLink
               to={link.path}
               className={theme === "dark" ? styles["dark"] : styles["light"]}
+              onClick={onLinkClick}
             >
               {link.title}
             </NavLink>

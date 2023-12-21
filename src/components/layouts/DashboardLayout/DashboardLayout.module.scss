@@ -2,10 +2,6 @@
 @use "../../../style/abstracts/mixins" as mixins;
 
 .dashboard-layout {
-  // display: flex;
-  // flex-direction: column;
-  // height: 100vh;
-
   &__header {
     &.dark {
       background-color: black;
@@ -19,8 +15,6 @@
   }
 
   .menu-button {
-    // border: solid 1px red;
-
     @media (min-width: calc(#{map-get(variables.$breakpoints, md)} - 1px)) {
       display: none;
     }
@@ -33,8 +27,6 @@
   }
 
   .header-navbar {
-    // background-color: red;
-
     &.dark {
       ul {
         li {
@@ -61,8 +53,6 @@
   }
 
   .mobile-menu {
-    // background-color: red;
-
     &.dark {
       ul {
         li {
@@ -98,7 +88,7 @@
 
   &__content {
     &.dark {
-      background-color: black;
+      background-color: #282828;
     }
 
     &.light {

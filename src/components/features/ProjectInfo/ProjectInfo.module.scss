@@ -1,4 +1,51 @@
+@use "../../../style/abstracts/variables" as variables;
+@use "../../../style/abstracts/mixins" as mixins;
+
 .project-info {
-  padding-right: 24px;
-  border-right: solid 0.1px black;
+  padding-bottom: 16px;
+  // border-bottom: solid 0.1px black;
+
+  &.light {
+    border-bottom: solid 0.1px black;
+  }
+
+  &.dark {
+    border-bottom: solid 0.1px white;
+  }
+
+  @media (min-width: calc(#{map-get(variables.$breakpoints, md)} - 1px)) {
+    padding-right: 24px;
+    // border-right: solid 0.1px black;
+    // border-bottom: none;
+
+    &.light {
+      border-right: solid 0.1px black;
+      border-bottom: none;
+    }
+
+    &.dark {
+      border-right: solid 0.1px white;
+      border-bottom: none;
+    }
+  }
+
+  &__title {
+    &.light {
+      color: black;
+    }
+
+    &.dark {
+      color: white;
+    }
+  }
+
+  &__description {
+    &.light {
+      color: black;
+    }
+
+    &.dark {
+      color: white;
+    }
+  }
 }

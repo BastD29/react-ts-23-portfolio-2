@@ -7,14 +7,24 @@ import { useGetProjectByIdQuery } from "../../../store/project/apiSlice";
 import { ProjectTechnology } from "../ProjectTechnology/ProjectTechnology";
 import { ProjectInfo } from "../ProjectInfo/ProjectInfo";
 
+import { Icon } from "../../shared/Icon/Icon";
+import { Button } from "../../shared/Button/Button";
+
+import { IoArrowBack } from "react-icons/io5";
+
+import { useTheme } from "../../../contexts/ThemeContext";
+
 import styles from "./ProjectDetail.module.scss";
 
 type ProjectDetailProps = {};
 
 const ProjectDetail: FC<ProjectDetailProps> = ({}) => {
-  // const navigate = useNavigate();
-
+  const navigate = useNavigate();
   const { projectId } = useParams();
+
+  const { theme } = useTheme();
+
+  const iconColor = theme === "dark" ? "black" : "white";
 
   const {
     data: project,
@@ -26,8 +36,20 @@ const ProjectDetail: FC<ProjectDetailProps> = ({}) => {
   if (projectError) return <div>Error occurred: {projectError.toString()}</div>;
 
   return (
-    <div className={styles["project-detail"]}>
-      {/* //*transform this list with small cards */}
+    <div
+      className={`${styles["project-detail"]} ${
+        theme === "dark" ? styles["dark"] : styles["light"]
+      }`}
+    >
+      <Button
+        icon={<Icon IconType={IoArrowBack} color={iconColor} />}
+        onClick={() => navigate(-1)}
+        text="Go back"
+        className={`${styles["project-detail__goBackBtn"]} ${
+          theme === "dark" ? styles["dark"] : styles["light"]
+        }`}
+        color={iconColor}
+      />
 
       {project && (
         <>

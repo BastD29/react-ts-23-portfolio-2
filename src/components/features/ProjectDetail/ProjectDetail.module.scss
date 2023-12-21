@@ -1,4 +1,11 @@
+@use "../../../style/abstracts/variables" as variables;
+@use "../../../style/abstracts/mixins" as mixins;
+
 .project-detail {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 16px;
+
   &__paragraph {
     display: flex;
     flex-direction: row;
@@ -14,13 +21,33 @@
   }
 
   &__content {
+    // padding-top: 24px;
+
+    display: flex;
+    flex-direction: column;
+    grid-gap: 16px;
+
+    @media (min-width: calc(#{map-get(variables.$breakpoints, md)} - 1px)) {
+      flex-direction: row;
+    }
+  }
+
+  &__goBackBtn {
     display: flex;
     flex-direction: row;
-    // align-items: start;
-    // justify-content: space-around;
-    // justify-content: space-between;
-    grid-gap: 24px;
+    align-items: center;
+    padding: 5px 10px;
+    border-radius: 10px;
+    width: max-content;
 
-    padding: 24px;
+    &.light {
+      background-color: black;
+      // color: white;
+    }
+
+    &.dark {
+      background-color: white;
+      // color: black;
+    }
   }
 }

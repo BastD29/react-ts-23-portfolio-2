@@ -1,5 +1,5 @@
 .project-card {
-  width: 200px;
+  // width: 200px;
 
   &__image {
     display: block;
@@ -20,9 +20,9 @@
 
     &.dark {
       background-color: black;
-      border-bottom: solid 0.1px white;
-      border-left: solid 0.1px white;
-      border-right: solid 0.1px white;
+      // border-bottom: solid 0.1px white;
+      // border-left: solid 0.1px white;
+      // border-right: solid 0.1px white;
 
       h3 {
         color: white;

@@ -1,4 +1,4 @@
-import { FC, ReactElement } from "react";
+import { FC, ReactElement, useRef } from "react";
 
 import { MdAlbum, MdClose } from "react-icons/md";
 
@@ -11,6 +11,7 @@ import { homepageLinks } from "../../../constants/links";
 import { useTheme } from "../../../contexts/ThemeContext";
 
 import styles from "./MobileMenu.module.scss";
+import useOutsideClick from "../../../hooks/useOutsideClick";
 
 type MobileMenuProps = {
   icon?: ReactElement;
@@ -31,8 +32,12 @@ const MobileMenu: FC<MobileMenuProps> = ({
 
   const iconColor = theme === "dark" ? "black" : "white";
 
+  const menuRef = useRef(null);
+  useOutsideClick(menuRef, toggleMobileMenu);
+
   return (
     <div
+      ref={menuRef}
       className={`${styles["mobile-menu"]} ${className || ""} ${
         theme === "dark" ? styles["dark"] : styles["light"]
       }`}
@@ -53,6 +58,7 @@ const MobileMenu: FC<MobileMenuProps> = ({
         className={`${styles["mobile-menu__navbar"]} ${
           theme === "dark" ? styles["dark"] : styles["light"]
         }`}
+        onLinkClick={toggleMobileMenu}
       />
     </div>
   );

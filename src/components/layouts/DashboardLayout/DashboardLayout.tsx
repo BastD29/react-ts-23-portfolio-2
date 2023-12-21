@@ -6,6 +6,7 @@ import { Navbar } from "../../shared/Navbar/Navbar";
 import { Icon } from "../../shared/Icon/Icon";
 import { SearchBar } from "../../shared/SearchBar/SearchBar";
 import { Content } from "../../shared/Content/Content";
+import { Footer } from "../../shared/Footer/Footer";
 
 import { BaseLayout } from "../BaseLayout/BaseLayout";
 
@@ -25,9 +26,9 @@ import { useTheme } from "../../../contexts/ThemeContext";
 
 import { Outlet } from "react-router-dom";
 
-import styles from "./DashboardLayout.module.scss";
-import { Footer } from "../../shared/Footer/Footer";
 import i18n from "../../../i18n/i18n";
+
+import styles from "./DashboardLayout.module.scss";
 
 const DashboardLayout = () => {
   const currentYear = new Date().getFullYear();

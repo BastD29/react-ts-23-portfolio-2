@@ -10,8 +10,9 @@ import { Link } from "react-router-dom";
 
 import i18n from "../../../i18n/i18n";
 
-import styles from "./ProjectCard.module.scss";
 import { useTheme } from "../../../contexts/ThemeContext";
+
+import styles from "./ProjectCard.module.scss";
 
 type ProjectCardProps = {
   project: Project;
@@ -37,7 +38,6 @@ const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
           <a href={project.website} target="_blank" rel="noopener noreferrer">
             <Icon IconType={IoLogoGithub} />
           </a>
-          {/* <Link to={`/projects/${project.projectId}`}> */}
           <Link to={`/projects/${project._id}`}>
             <p>{i18n.t("dashboard.project.projectCard.detailBtn") as string}</p>
           </Link>
