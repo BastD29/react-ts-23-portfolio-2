@@ -11,6 +11,7 @@ import { Footer } from "../../shared/Footer/Footer";
 import { BaseLayout } from "../BaseLayout/BaseLayout";
 
 import { MobileMenu } from "../../features/MobileMenu/MobileMenu";
+import { MobileMenu2 } from "../../features/MobileMenu/MobileMenu2";
 
 import {
   MdMenu,
@@ -37,6 +38,8 @@ const DashboardLayout = () => {
 
   const [showSearchBar, setShowSearchBar] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+
+  // console.log("isMenuOpen:", isMenuOpen);
 
   const toggleSearchBar = () => {
     setShowSearchBar((prevState) => !prevState);
@@ -77,7 +80,14 @@ const DashboardLayout = () => {
           />
         }
         mobileMenu={
-          <MobileMenu
+          // <MobileMenu
+          //   className={`${styles["mobile-menu"]} ${
+          //     theme === "dark" ? styles["dark"] : styles["light"]
+          //   }`}
+          //   isMenuOpen={isMenuOpen}
+          //   toggleMobileMenu={toggleMobileMenu}
+          // />
+          <MobileMenu2
             className={`${styles["mobile-menu"]} ${
               theme === "dark" ? styles["dark"] : styles["light"]
             }`}

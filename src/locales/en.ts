@@ -41,6 +41,10 @@ export default {
   },
   dashboard: {
     project: {
+      projectsList: {
+        noProjectFound: "No project found matching your criteria.",
+        projectNumber: "projects",
+      },
       projectCard: {
         detailBtn: "See detail",
       },
@@ -59,6 +63,9 @@ export default {
         website: "Website",
         github: "Github",
       },
+    },
+    filter: {
+      filter: "Filter your search",
     },
   },
 };

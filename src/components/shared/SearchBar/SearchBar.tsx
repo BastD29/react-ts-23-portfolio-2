@@ -8,6 +8,12 @@ import { Icon } from "../Icon/Icon";
 
 import { useTheme } from "../../../contexts/ThemeContext";
 
+import { useDispatch, useSelector } from "react-redux";
+
+import { setFilter } from "../../../store/filter/slice";
+
+import { RootState } from "../../../store/store";
+
 import styles from "./SearchBar.module.scss";
 
 type SearchBarProps = {
@@ -17,6 +23,23 @@ type SearchBarProps = {
 const SearchBar: FC<SearchBarProps> = ({ className }) => {
   const { theme } = useTheme();
 
+  const dispatch = useDispatch();
+
+  const filter = useSelector((state: RootState) => state.filter.filter);
+  // console.log("filter:", filter);
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    // const newValue = e.target.value;
+    // console.log("Current Input:", newValue);
+
+    dispatch(
+      setFilter({
+        ...filter,
+        [e.target.name]: e.target.value,
+      })
+    );
+  };
+
   return (
     <div className={`${styles["search-bar"]} ${className || ""} `}>
       <Input
@@ -24,6 +47,8 @@ const SearchBar: FC<SearchBarProps> = ({ className }) => {
         className={`${styles["search-bar__input"]} ${
           theme === "dark" ? styles["dark"] : styles["light"]
         }`}
+        onChange={handleInputChange}
+        name="title"
       />
       <Button
         icon={<Icon IconType={MdOutlineSearch} color="white" />}

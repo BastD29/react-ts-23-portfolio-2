@@ -20,11 +20,11 @@
     }
   }
 
-  .search-button {
-    @media (max-width: calc(#{map-get(variables.$breakpoints, md)} - 1px)) {
-      display: none;
-    }
-  }
+  // .search-button {
+  //   @media (max-width: calc(#{map-get(variables.$breakpoints, md)} - 1px)) {
+  //     display: none;
+  //   }
+  // }
 
   .header-navbar {
     &.dark {

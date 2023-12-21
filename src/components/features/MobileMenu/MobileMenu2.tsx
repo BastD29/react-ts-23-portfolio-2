@@ -2,17 +2,14 @@ import { FC, ReactElement, useRef } from "react";
 
 import { MdAlbum, MdClose } from "react-icons/md";
 
-import { Icon } from "../../shared/Icon/Icon";
-import { Button } from "../../shared/Button/Button";
-import { Navbar } from "../../shared/Navbar/Navbar";
-
 import { homepageLinks } from "../../../constants/links";
 
 import { useTheme } from "../../../contexts/ThemeContext";
 
-import useOutsideClick from "../../../hooks/useOutsideClick";
-
 import styles from "./MobileMenu.module.scss";
+import { Button } from "../../shared/Button/Button";
+import { Icon } from "../../shared/Icon/Icon";
+import { Navbar } from "../../shared/Navbar/Navbar";
 
 type MobileMenuProps = {
   icon?: ReactElement;
@@ -21,7 +18,7 @@ type MobileMenuProps = {
   toggleMobileMenu: () => void;
 };
 
-const MobileMenu: FC<MobileMenuProps> = ({
+const MobileMenu2: FC<MobileMenuProps> = ({
   className,
   icon,
   isMenuOpen,
@@ -33,12 +30,8 @@ const MobileMenu: FC<MobileMenuProps> = ({
 
   const iconColor = theme === "dark" ? "black" : "white";
 
-  const menuRef = useRef(null);
-  useOutsideClick(menuRef, toggleMobileMenu);
-
   return (
     <div
-      ref={menuRef}
       className={`${styles["mobile-menu"]} ${className || ""} ${
         theme === "dark" ? styles["dark"] : styles["light"]
       }`}
@@ -65,4 +58,4 @@ const MobileMenu: FC<MobileMenuProps> = ({
   );
 };
 
-export { MobileMenu };
+export { MobileMenu2 };

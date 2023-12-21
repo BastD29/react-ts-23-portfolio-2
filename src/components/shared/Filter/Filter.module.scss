@@ -1,0 +1,11 @@
+.filter {
+  &__select {
+    &.dark {
+      color: black;
+    }
+
+    &.light {
+      color: white;
+    }
+  }
+}

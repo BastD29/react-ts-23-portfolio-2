@@ -10,7 +10,7 @@ type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   icon?: ReactElement;
   text?: string;
   className?: string;
-  backgroundColor?: string; // New prop for background color
+  backgroundColor?: string;
   color?: string;
 };
 
