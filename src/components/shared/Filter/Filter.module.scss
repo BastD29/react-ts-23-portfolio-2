@@ -1,11 +1,31 @@
-.filter {
-  &__select {
-    &.dark {
-      color: black;
-    }
+@use "../../../style/abstracts/variables" as variables;
+@use "../../../style/abstracts/mixins" as mixins;
 
-    &.light {
-      color: white;
-    }
+.filter {
+  margin-top: 20px;
+
+  display: flex;
+  flex-direction: column;
+  grid-gap: 20px;
+
+  @media (min-width: calc(#{map-get(variables.$breakpoints, sm)} - 1px)) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: calc(#{map-get(variables.$breakpoints, md)} - 1px)) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    grid-gap: 5px;
+
+    background-color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    width: max-content;
   }
 }

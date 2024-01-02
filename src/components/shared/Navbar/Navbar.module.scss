@@ -2,8 +2,6 @@
 @use "../../../style/abstracts/mixins" as mixins;
 
 .navbar {
-  // background-color: red;
-
   ul {
     list-style: none;
     display: flex;
@@ -14,18 +12,6 @@
     a {
       text-decoration: none;
       color: inherit;
-
-      // &.dark {
-      //   color: white;
-      // }
-
-      // &.light {
-      //   color: black;
-      // }
     }
   }
-
-  // @media (max-width: calc(#{map-get(variables.$breakpoints, md)} - 1px)) {
-  //   display: none;
-  // }
 }

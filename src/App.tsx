@@ -5,9 +5,9 @@ import { PageLayout } from "./components/layouts/PageLayout/PageLayout";
 
 import { About } from "./components/features/About/About";
 import { Contact } from "./components/features/Contact/Contact";
-import { ProjectList } from "./components/features/ProjectList/ProjectList";
 import { ProjectDetail } from "./components/features/ProjectDetail/ProjectDetail";
 import { Home } from "./components/features/Home/Home";
+import { Projects } from "./components/features/Projects/Projects";
 
 import {
   ABOUT,
@@ -26,7 +26,7 @@ export default function App() {
           <Route path={HOME} element={<Home />} />
         </Route>
         <Route element={<PageLayout />}>
-          <Route path={PROJECTS_LIST} element={<ProjectList />} />
+          <Route path={PROJECTS_LIST} element={<Projects />} />
         </Route>
         <Route element={<PageLayout />}>
           <Route path={PROJECT_DETAIL} element={<ProjectDetail />} />

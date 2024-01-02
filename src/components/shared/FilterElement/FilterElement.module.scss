@@ -1,0 +1,16 @@
+.filter-element {
+  display: flex;
+  flex-direction: column;
+  width: max-content;
+  grid-gap: 5px;
+
+  &__select {
+    &.dark {
+      color: black;
+    }
+
+    &.light {
+      color: white;
+    }
+  }
+}

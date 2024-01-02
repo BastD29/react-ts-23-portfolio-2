@@ -23,12 +23,19 @@ export const projectApi = createApi({
         return `projects?${query}`;
       },
     }),
-    getProjectById: builder.query({
+    getProjectById: builder.query<Project, string>({
       query: (id) => {
         return `projects/${id}`;
       },
     }),
+    getOptions: builder.query<Project, void>({
+      query: () => "projects/options",
+    }),
   }),
 });
 
-export const { useGetProjectsQuery, useGetProjectByIdQuery } = projectApi;
+export const {
+  useGetProjectsQuery,
+  useGetProjectByIdQuery,
+  useGetOptionsQuery,
+} = projectApi;

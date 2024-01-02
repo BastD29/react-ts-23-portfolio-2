@@ -1,6 +1,13 @@
 .filter-menu {
   z-index: 2;
 
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 24px;
+  width: 70%;
+  height: 100vh;
+
   &.dark {
     background-color: white;
   }

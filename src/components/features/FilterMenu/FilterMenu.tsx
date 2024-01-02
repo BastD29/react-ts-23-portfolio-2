@@ -1,4 +1,4 @@
-import { FC, ReactElement, useRef } from "react";
+import { FC } from "react";
 
 import { Button } from "../../shared/Button/Button";
 import { Icon } from "../../shared/Icon/Icon";
@@ -39,7 +39,7 @@ const FilterMenu: FC<FilterMenuProps> = ({ className, toggleFilterMenu }) => {
             theme === "dark" ? styles["dark"] : styles["light"]
           }`}
         >
-          {i18n.t("dashboard.filter.filter") as string}
+          {i18n.t("dashboard.filter.filterBy") as string}
         </h2>
         <Button
           icon={<Icon IconType={MdClose} color={iconColor} />}

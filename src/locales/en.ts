@@ -65,7 +65,15 @@ export default {
       },
     },
     filter: {
-      filter: "Filter your search",
+      filterBy: "Filter by:",
+      filterType: {
+        language: "Language",
+        framework: "Framework",
+      },
+      filterSelect: {
+        selectLanguage: "Select language",
+        selectFramework: "Select framework",
+      },
     },
   },
 };
