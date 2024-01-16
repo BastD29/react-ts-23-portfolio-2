@@ -10,7 +10,10 @@ type QueryArg =
 
 export const projectApi = createApi({
   reducerPath: "projectApi",
-  baseQuery: fetchBaseQuery({ baseUrl: "/api" }),
+  baseQuery: fetchBaseQuery({
+    // baseUrl: "/api"
+    baseUrl: "https://portfolio-api-z0fs.onrender.com/api",
+  }),
   endpoints: (builder) => ({
     // getProjects: builder.query<Project[], void>({
     //   query: () => {

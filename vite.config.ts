@@ -7,7 +7,8 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: "http://localhost:7000",
+        // target: "http://localhost:7000",
+        target: "https://portfolio-api-z0fs.onrender.com",
         changeOrigin: true,
       },
     },
