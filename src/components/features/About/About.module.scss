@@ -1,0 +1,25 @@
+.about {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 24px;
+
+  &__subpart {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 16px;
+  }
+
+  &__icons {
+    display: flex;
+    flex-direction: row;
+    grid-gap: 16px;
+  }
+
+  &.dark {
+    color: white;
+  }
+
+  &.light {
+    color: black;
+  }
+}

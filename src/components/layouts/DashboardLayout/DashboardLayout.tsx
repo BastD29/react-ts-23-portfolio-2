@@ -1,4 +1,5 @@
 import { homepageLinks } from "../../../constants/links";
+import { PROJECTS_LIST } from "../../../constants/routes";
 
 import { Button } from "../../shared/Button/Button";
 import { Header } from "../../shared/Header/Header";
@@ -11,7 +12,6 @@ import { Footer } from "../../shared/Footer/Footer";
 import { BaseLayout } from "../BaseLayout/BaseLayout";
 
 import { MobileMenu } from "../../features/MobileMenu/MobileMenu";
-import { MobileMenu2 } from "../../features/MobileMenu/MobileMenu2";
 
 import {
   MdMenu,
@@ -25,7 +25,7 @@ import { useState } from "react";
 
 import { useTheme } from "../../../contexts/ThemeContext";
 
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 
 import i18n from "../../../i18n/i18n";
 
@@ -35,6 +35,15 @@ const DashboardLayout = () => {
   const currentYear = new Date().getFullYear();
 
   const { theme, toggleTheme } = useTheme();
+
+  const location = useLocation();
+
+  // to hide search bar and search bar icon when on the detail page
+  const isProjectDetailPage = new RegExp(`${PROJECTS_LIST}/[^/]+$`).test(
+    location.pathname
+  );
+
+  console.log("isProjectDetailPage: ", isProjectDetailPage);
 
   const [showSearchBar, setShowSearchBar] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
@@ -49,15 +58,18 @@ const DashboardLayout = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const searchBarElement = showSearchBar ? <SearchBar /> : undefined;
+  const searchBarElement =
+    showSearchBar && !isProjectDetailPage ? <SearchBar /> : undefined;
 
-  const searchButtonElement = !showSearchBar ? (
-    <Button
-      icon={<Icon IconType={MdOutlineSearch} />}
-      onClick={toggleSearchBar}
-      className={styles["search-button"]}
-    />
-  ) : undefined;
+  // searchButtonElement is the magnifying glass icon only
+  const searchButtonElement =
+    !showSearchBar && !isProjectDetailPage ? (
+      <Button
+        icon={<Icon IconType={MdOutlineSearch} />}
+        onClick={toggleSearchBar}
+        className={styles["search-button"]}
+      />
+    ) : undefined;
 
   const darkModeIcon =
     theme === "light" ? (
@@ -80,14 +92,7 @@ const DashboardLayout = () => {
           />
         }
         mobileMenu={
-          // <MobileMenu
-          //   className={`${styles["mobile-menu"]} ${
-          //     theme === "dark" ? styles["dark"] : styles["light"]
-          //   }`}
-          //   isMenuOpen={isMenuOpen}
-          //   toggleMobileMenu={toggleMobileMenu}
-          // />
-          <MobileMenu2
+          <MobileMenu
             className={`${styles["mobile-menu"]} ${
               theme === "dark" ? styles["dark"] : styles["light"]
             }`}

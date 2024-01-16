@@ -35,7 +35,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
       >
         <h3>{project.title}</h3>
         <div className={styles["project-card__actions"]}>
-          <a href={project.website} target="_blank" rel="noopener noreferrer">
+          <a href={project.github} target="_blank" rel="noopener noreferrer">
             <Icon IconType={IoLogoGithub} />
           </a>
           <Link to={`/projects/${project._id}`}>

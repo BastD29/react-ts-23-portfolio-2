@@ -69,11 +69,28 @@ export default {
       filterType: {
         language: "Language",
         framework: "Framework",
+        stack: "Stack",
+        style: "Style",
       },
       filterSelect: {
         selectLanguage: "Select language",
         selectFramework: "Select framework",
+        selectStack: "Select stack",
+        selectStyle: "Select style",
       },
     },
+  },
+  home: {
+    presentation:
+      "Welcome to my digital showcase, where programming meets creativity and technical expertise. As a passionate developer with a knack for transforming complex problems into elegant solutions, my portfolio is a testament to my journey in the ever-evolving world of technology.",
+    projects: "Please have a look at my projects.",
+  },
+  about: {
+    title: "I work with",
+    frontend: "Frontend",
+    libraries: "Libraries",
+    backend: "Backend",
+    languages: "Languages",
+    versionControl: "Version control",
   },
 };

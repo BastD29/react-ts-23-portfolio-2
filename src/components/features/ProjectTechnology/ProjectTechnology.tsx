@@ -18,13 +18,13 @@ const ProjectTechnology: FC<ProjectTechnologyProps> = ({ project }) => {
     { key: "styles", content: project?.styles },
     { key: "componentLibraries", content: project?.componentLibraries },
     { key: "frameworks", content: project?.frameworks },
-    { key: "hooks", content: project?.hooks },
     { key: "functionalities", content: project?.functionalities },
     { key: "startDate", content: project?.startDate },
     { key: "endDate", content: project?.endDate },
     { key: "status", content: project?.status },
-    { key: "website", content: project?.website },
-    { key: "github", content: project?.github },
+    // { key: "hooks", content: project?.hooks },
+    // { key: "website", content: project?.website },
+    // { key: "github", content: project?.github },
   ];
   return (
     <div className={styles["project-technology"]}>

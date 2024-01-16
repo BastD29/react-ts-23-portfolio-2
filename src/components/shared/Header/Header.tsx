@@ -19,7 +19,6 @@ type HeaderProps = HTMLAttributes<HTMLElement> & {
 };
 
 const Header: FC<HeaderProps> = ({
-  title,
   navbar,
   buttons,
   className,

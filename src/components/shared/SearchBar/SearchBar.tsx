@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 
 import { MdOutlineSearch } from "react-icons/md";
 
@@ -29,9 +29,6 @@ const SearchBar: FC<SearchBarProps> = ({ className }) => {
   // console.log("filter:", filter);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    // const newValue = e.target.value;
-    // console.log("Current Input:", newValue);
-
     dispatch(
       setFilter({
         ...filter,

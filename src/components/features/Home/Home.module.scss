@@ -1,0 +1,50 @@
+@use "../../../style/abstracts/variables" as variables;
+@use "../../../style/abstracts/mixins" as mixins;
+
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  grid-gap: 24px;
+
+  @media (min-width: calc(#{map-get(variables.$breakpoints, md)} - 1px)) {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-width: 500px;
+
+    @media (min-width: calc(#{map-get(variables.$breakpoints, md)} - 1px)) {
+      flex-direction: row;
+    }
+  }
+
+  &__description {
+    line-height: 24px;
+
+    &.light  {
+      color: black;
+    }
+
+    &.dark {
+      color: white;
+    }
+  }
+
+  &__projects {
+    line-height: 24px;
+
+    &.light  {
+      color: black;
+    }
+
+    &.dark {
+      color: white;
+    }
+  }
+}

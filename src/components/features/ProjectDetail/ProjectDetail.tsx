@@ -26,14 +26,27 @@ const ProjectDetail: FC<ProjectDetailProps> = ({}) => {
 
   const iconColor = theme === "dark" ? "black" : "white";
 
+  // check that projectId is not undefined before to call useGetProjectByIdQuery
+  let projectQueryResult = null;
+  if (projectId) {
+    projectQueryResult = useGetProjectByIdQuery(projectId);
+  }
+
+  // const {
+  //   data: project,
+  //   error: projectError,
+  //   isLoading: projectIsLoading,
+  // } = useGetProjectByIdQuery(projectId);
+
   const {
     data: project,
     error: projectError,
     isLoading: projectIsLoading,
-  } = useGetProjectByIdQuery(projectId);
+  } = projectQueryResult || { data: null, error: null, isLoading: false };
 
   if (projectIsLoading) return <div>Loading...</div>;
   if (projectError) return <div>Error occurred: {projectError.toString()}</div>;
+  if (!project) return <div>Project not found</div>;
 
   return (
     <div
