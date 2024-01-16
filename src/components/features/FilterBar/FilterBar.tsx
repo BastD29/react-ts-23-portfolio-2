@@ -34,8 +34,8 @@ const FilterBar: FC<FilterBarProps> = ({}) => {
 
   const {
     data: projects,
-    error: projectsError,
-    isLoading: projectsIsLoading,
+    // error: projectsError,
+    // isLoading: projectsIsLoading,
   } = useGetProjectsQuery(filter);
 
   const isFilterSelected = Object.values(filter).some((value) => value);

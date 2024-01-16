@@ -48,8 +48,8 @@ const Filter: FC<FilterProps> = ({ className }) => {
 
   const {
     data: options,
-    error: optionError,
-    isLoading: optionLoading,
+    // error: optionError,
+    // isLoading: optionLoading,
   } = useGetOptionsQuery();
 
   console.log("options:", options);
